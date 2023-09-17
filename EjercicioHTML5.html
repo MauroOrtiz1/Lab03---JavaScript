@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa de Cambio</title>
+    <script>
+        function Cotizar() {
+            var soles = parseFloat(document.getElementById("Monto").value);
+            var Dolar = document.getElementById("opcion1").checked;
+            var Euro = document.getElementById("opcion2").checked;
+            var cambio;
+            if (Dolar){
+                cambio = soles / 0.27;
+                alert("El cambio a dolares es: " + cambio.toFixed(2));
+            } else{
+                var cambio = soles / 0.25;
+                alert("El cambio a euros es: " + cambio.toFixed(2));
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>CASA DE CAMBIO</h1>
+    <h2>Seleccionar moneda de Cambio:</h2>
+    
+    <input type="radio" id="opcion1" name="eleccion" value="Dolar" checked onclick="muestraOpcion()">Dólar<br/>
+    <input type="radio" id="opcion2" name="eleccion" value="Euro" onclick="muestraOpcion()">Euro<br/> 
+    
+    <h2>Ingrese monto en soles:</h2>
+    <input type="text" id="Monto" />
+    <button type="button" onclick="Cotizar()">Cotizar</button>
+</body>
+</html>
